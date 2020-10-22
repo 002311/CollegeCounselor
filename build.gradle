@@ -1,0 +1,59 @@
+
+plugins{
+    
+    id "edu.sc.seis.launch4j" version "1.1.2"
+
+}
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+apply plugin: 'edu.sc.seis.launch4j'
+
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+
+
+
+mainClassName = 'CollegeCounselor.Main'
+
+repositories {
+    jcenter()
+}
+
+
+
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile('com.microsoft.graph:microsoft-graph:1.5.+')
+    compile group: 'com.microsoft.azure', name: 'msal4j', version: '1.4.0'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+}
+
+launch4j {
+    headerType="gui"
+    mainClassName = 'CollegeCounselor.Main'
+    outfile = "CollegeCounselor.exe"
+    icon = "${projectDir}/src/main/resources/Images/Icon.ico"
+    jar = '../libs/CollegeCounselor.jar'
+}
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'CollegeCounselor.Main'
+      
+
+    }
+ 
+    from { (configurations.runtime).collect { it.isDirectory() ? it : zipTree(it) } } {
+        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    }
+
+}
+
