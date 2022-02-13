@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CollegeCounselor;
 
 import java.util.List;
@@ -143,10 +138,7 @@ public class CollegeCounselorGUI extends javax.swing.JFrame {
             
         }catch(Exception e){
             
-            //TODO: Error handling
             ca1Total.setText("N/A");
-
-            
         }
         
         int mr = 0;
@@ -165,7 +157,6 @@ public class CollegeCounselorGUI extends javax.swing.JFrame {
             
         }catch(Exception e){
             
-            //TODO: Error handling
             mrTotal.setText("N/A");
             
         }
@@ -185,9 +176,7 @@ public class CollegeCounselorGUI extends javax.swing.JFrame {
             
             
         }catch(Exception e){
-            
-            //TODO: Error handling
-            
+                        
             ca2Total.setText("N/A");
             
         }

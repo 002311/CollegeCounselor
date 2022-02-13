@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CollegeCounselor;
 
 import java.io.IOException;
@@ -13,8 +8,6 @@ import java.util.*;
 import com.google.gson.*;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
-
-
 
 /**
  *
@@ -27,10 +20,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        System.out.println("Java Graph Tutorial");
-        System.out.println();
+
         
         final Properties oAuthProperties = new Properties();
         
@@ -54,6 +44,7 @@ public class Main {
         String name = user.displayName;
        
        try{ 
+           //Load the GUI
         formStart(name, loadData(accessToken));
         
        } catch (Exception e){
@@ -64,7 +55,7 @@ public class Main {
 
     }
     
-    
+    //Read all data from the excel file into a List of Maps
     public static List<Map<String,String>>loadData(String accessToken){
         
         
@@ -81,6 +72,7 @@ public class Main {
         
     }
     
+    //Parse each Json element and store its data in a map
     private static Map<String,String> mapValues(JsonElement input){
         
         JsonArray inputAsArray = input.getAsJsonArray();

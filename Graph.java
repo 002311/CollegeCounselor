@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CollegeCounselor;
 
 import com.microsoft.graph.logger.DefaultLogger;
@@ -18,8 +13,6 @@ import com.microsoft.graph.models.extensions.WorkbookTableRow;
 import java.util.List;
 import com.microsoft.graph.requests.extensions.IDriveItemSearchCollectionPage;
 import com.microsoft.graph.requests.extensions.*;
-
-/**
 
 /**
  *
